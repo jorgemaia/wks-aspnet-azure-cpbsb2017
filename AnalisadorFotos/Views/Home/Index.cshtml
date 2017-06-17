@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Analisador de imagens</h2>
+        <form method="post">
+            <input type="text" name="imagem" />
+            <button type="submit" >Consultar</button>
+        </form>
+    </div>
+    <br />
+    @if (ViewData["imagem"] != null)
+    {
+        <div class="col-md-6">
+            <h4>Imagem</h4>
+            <img class="img-responsive" src="@ViewData["imagem"]" />
+        </div>
+    }
+    @if (ViewData["analise"] !=null)
+    {
+        <div class="col-md-6">
+            <h4>Analise</h4>
+            @ViewData["analise"]
+        </div>
+    }
+</div>
